@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Simple map with markers</title>
+
+        <!-- Common files -->
+        <link rel="stylesheet" href="/assets/common.css"/>
+        <script src="/assets/common.js"></script>
+
+        <script src="data.js"></script>
+
+        <!-- leaflet -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+
+        <style>
+            #mapid { position: absolute; top: 0; bottom: 0; width: 100%; }
+        </style>
+
+    </head>
+    <body>
+        <div id="mapid"></div>
+
+        <script>
+            var map = L.map('mapid').setView([45.5088400, -73.5878100], 13);
+
+            // Use of street map
+            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            L.geoJSON(D).addTo(map);
+
+        </script>
+  </body>
+</html>
