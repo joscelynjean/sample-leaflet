@@ -19,6 +19,24 @@ To run the application, from a terminal :
 
 You can now navigate to http://localhost:5000.
 
+## Build Docker image
+
+### Requirements
+
+- Docker
+
+### Build image
+
+To build image, from a terminal :
+
+    docker build -t joscelynjean/sample-leaflet .
+
+To run the image, from a terminal :
+
+    docker run -name sample-leaflet -p 8080:80 joscelynjean/sample-leaflet
+
+Now, the container is accessible from http://localhost8080.
+
 # Samples
 
 Here is the samples that I developed.
